@@ -1,6 +1,6 @@
-# OpenACC-Programs
+# OpenACC-Examples
 
-Repository for OpenACC Programs 2022.
+Repository for OpenACC Example Programs 2022.
 
 ## Authors and Acknowledgment
 
