@@ -1,4 +1,4 @@
-CC := pgc++
+CC := nvc++
 CFLAGS := -O3 -w
 ACCFLAGS_1 := -fast -ta=tesla,managed -Minfo=accel
 ACCFLAGS_2 := -fast -ta=tesla -Minfo=accel
