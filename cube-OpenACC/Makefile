@@ -1,10 +1,10 @@
 SOURCES = cubes_openacc.c cubes_serial_eric.c
 TARGET = cubes
-CFLAGS = -std=c99 -lm -O2
-CC = gcc
+CFLAGS = -ta=tesla -Minfo=accel -lm
+CC = nvc
 
 acc:
-	$(CC) $(SOURCES) $(CFLAGS) -fopenacc -o $(TARGET)
+	$(CC) $(SOURCES) $(CFLAGS) -o $(TARGET)
 
 run:
 	./$(TARGET)
