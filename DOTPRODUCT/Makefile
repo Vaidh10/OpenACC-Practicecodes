@@ -1,4 +1,4 @@
-SOURCES = src/dotproduct.c src/dotproduct_main.c src/Vector.c
+SOURCES = dotproduct.c dotproduct_main.c Vector.c
 TARGET = dotproduct
 CFLAGS = -ta=tesla -Minfo=accel
 CC = nvc
