@@ -1,4 +1,4 @@
-Example Jacobi
+# Example Jacobi
 ===================================
 
 ## Steps
