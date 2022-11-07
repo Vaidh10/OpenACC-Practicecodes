@@ -1,4 +1,4 @@
-# OpenACC-Examples
+# OpenACC-Practicecodes
 
 Repository for OpenACC Example Programs 2022.
 
