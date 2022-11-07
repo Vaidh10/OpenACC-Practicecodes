@@ -1,5 +1,4 @@
 # Example Gas Particle Simulation
-=================================================
 
 ## Make benchmarks
 

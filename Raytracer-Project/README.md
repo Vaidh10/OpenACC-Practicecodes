@@ -1,5 +1,4 @@
-Example Raytracer-Project
-=================================================
+# Example Raytracer-Project
 
 ## Make benchmarks
 

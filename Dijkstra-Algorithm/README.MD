@@ -1,5 +1,5 @@
 # Example Dijkstra's Algorithm
-=================================================
+
 ## Make benchmarks
 
 Configure the build and run commands.

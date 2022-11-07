@@ -1,6 +1,6 @@
-Example Cubes: This code solves the sum of three cubes problem.
+# Example Cubes: This code solves the sum of three cubes problem.
  *      x^3 + y^3 + z^3 = k
-=================================================
+
 ## Steps
 
 Configure the build and run commands.

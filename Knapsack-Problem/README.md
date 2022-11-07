@@ -1,5 +1,4 @@
 # Example Knapsack Problem
-=================================================
 
 ## Make benchmarks
 

@@ -1,5 +1,4 @@
 # Example Matrix multiplication
-=================================================
 
 ## Make benchmarks
 
