@@ -2,7 +2,7 @@
 
 Repository for OpenACC Example Programs 2022.
 
-## Steps
+## Make benchmark
 Configure the build and run commands.
 
 1.Enter the build command. A Makefile that uses the nvc compiler is provided. If you don't have Make or nvc, you can enter the compiler invocation directly. Otherwise :

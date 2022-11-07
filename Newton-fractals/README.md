@@ -1,5 +1,4 @@
-Example Newton fractals 
-=================================================
+# Example Newton fractals 
 
 ## Make benchmarks
 
