@@ -1,13 +1,10 @@
+include ../make.def
 SOURCES = newton_fractals_openacc.c
-CFLAGS = -acc -ta=tesla -Minfo=accel
-CC = nvc
 TARGET = newton_fractals_openacc
 
 acc:
-	$(CC) $(SOURCES) $(CFLAGS) -o $(TARGET)
-
+	${CLINK} ${CLINKFLAGS} -o ${SOURCES} ${TARGET} ${C_LIB}
 run:
-	./$(TARGET)
-
+    ./${TARGET}
 clean:
 	rm $(TARGET)

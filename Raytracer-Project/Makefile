@@ -1,13 +1,10 @@
+include ../make.def
 SOURCES = main.c
 TARGET = raytracer
-CFLAGS = -fopenacc
-CC = g++
 
 acc:
-	$(CC) $(SOURCES) $(CFLAGS) -o $(TARGET)
-
+	${CLINK} ${CLINKFLAGS} -o ${SOURCES} ${TARGET} ${C_LIB}
 run:
-	./$(TARGET)
-
+    ./${TARGET}
 clean:
 	rm $(TARGET)

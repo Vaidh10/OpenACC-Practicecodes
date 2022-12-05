@@ -1,18 +1,10 @@
+include ../make.def
+SOURCES = Parallel_With_Updates
 TARGET = jacobi
-CFLAGS = -ta=tesla -Minfo=accel
-CC = nvc
 
-parallel_bad:
-	$(CC) Parallel_Bad/jacobi.c Parallel_Bad/laplace2d.c $(CFLAGS) -o $(TARGET)
-
-parallel_good:
-	$(CC) Parallel_Good/jacobi.c Parallel_Good/laplace2d.c $(CFLAGS) -o $(TARGET)
-
-parallel_with_updates:
-	$(CC) Parallel_With_Updates/jacobi.c Parallel_With_Updates/laplace2d.c $(CFLAGS) -o $(TARGET)
-
+acc:
+	${CLINK} ${CLINKFLAGS} -o ${SOURCES} ${TARGET} ${C_LIB}
 run:
-	./$(TARGET)
-
+    ./${TARGET}
 clean:
 	rm $(TARGET)

@@ -1,6 +1,10 @@
-setup: miniWeather-serial.cpp
-	mpicxx -acc -ta=multicore -fast -Minfo=accel miniWeather-serial.cpp -lpnetcdf -o miniWeather
-gpu: miniWeather-serial.cpp
-	mpicxx -acc -ta=tesla -fast -Minfo=accel miniWeather-serial.cpp -lpnetcdf -o miniWeather
+include ../make.def
+SOURCES = mini_weather_openacc.cpp
+TARGET = miniWeather
+
+acc:
+	${CLINK} ${CLINKFLAGS} -o ${SOURCES} ${TARGET} ${C_LIB}
+run:
+    ./${TARGET}
 clean:
-	rm miniWeather
+	rm $(TARGET)

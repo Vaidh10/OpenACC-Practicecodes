@@ -5,7 +5,7 @@ Repository for OpenACC Example Programs 2022.
 ## Compile and Execute the benchmarks
 Configure the build and run commands.
 
-The Makefile supports different types of compilers. Enter the deepest directory containing the benchmark's name to compile it. such as cd SP/SP then use the OpenUH compiler to compile the benchmark.
+The Makefile supports different types of compilers. Enter the directory containing the program's name to compile it. such as cd Jacobi then use the nvc/gcc compiler to compile the benchmark.
 
 To compile with  compiler
 > make acc CC=nvc
