@@ -1,0 +1,18 @@
+# Parallel C:
+
+# nvc compiler
+ifeq ($(CC), nvc)
+    CC = nvc
+    CFLAGS = -ta=tesla -Minfo=accel
+    CLINK = nvc
+    CLINKFLAGS = -ta=tesla -Minfo=accel
+endif
+
+# GCC compiler
+ifeq ($(CC), gcc)
+    CC = gcc
+    CFLAGS = -O3 -mcmodel=medium
+    CLINK = gcc
+    CLINKFLAGS = -O3 -mcmodel=medium
+endif
+C_LIB  = -lm

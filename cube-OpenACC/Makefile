@@ -1,13 +1,10 @@
-SOURCES = cubes_openacc.c cubes_serial_eric.c
+include ../make.def
+SOURCES = cubes_openacc.c
 TARGET = cubes
-CFLAGS = -ta=tesla -Minfo=accel -lm
-CC = nvc
 
 acc:
-	$(CC) $(SOURCES) $(CFLAGS) -o $(TARGET)
-
+	${CLINK} ${CLINKFLAGS} -o ${SOURCES} ${TARGET} ${C_LIB}
 run:
-	./$(TARGET)
-
+    ./${TARGET}
 clean:
 	rm $(TARGET)

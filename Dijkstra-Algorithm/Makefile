@@ -1,13 +1,10 @@
+include ../make.def
 SOURCES = Dijkstra_openacc.c
-CFLAGS = -acc -ta=tesla -Minfo=accel
-CC = nvc
 TARGET = dijkstra
 
 acc:
-	$(CC) $(SOURCES) $(CFLAGS) -o $(TARGET)
-
+	${CLINK} ${CLINKFLAGS} -o ${SOURCES} ${TARGET} ${C_LIB}
 run:
-	./$(TARGET)
-
+    ./${TARGET}
 clean:
 	rm $(TARGET)
