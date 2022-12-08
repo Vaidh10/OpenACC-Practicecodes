@@ -11,8 +11,8 @@ endif
 # GCC compiler
 ifeq ($(CC), gcc)
     CC = gcc
-    CFLAGS = -O3 -mcmodel=medium
+    CFLAGS = -fopenacc -cpp -lm -fopt-info
     CLINK = gcc
-    CLINKFLAGS = -O3 -mcmodel=medium
+    CLINKFLAGS = -fopenacc -cpp -lm -fopt-info
 endif
 C_LIB  = -lm
