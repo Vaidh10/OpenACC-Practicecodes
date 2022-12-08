@@ -14,7 +14,3 @@ To compile with GCC compiler
 > make acc CC=gcc
 
 2.And then enter: `make run`
-
-## Authors and Acknowledgment
-
-See Contributors for a list of contributors towards this repository.
