@@ -7,7 +7,7 @@ Configure the build and run commands.
 
 The Makefile supports different types of compilers. Enter the directory containing the program's name to compile it. such as cd Jacobi then use the nvc/gcc compiler to compile the parallel code.
 
-To compile with Nvidia compiler
+1.To compile with Nvidia compiler
 > make acc CC=nvc
 
 To compile with GCC compiler
