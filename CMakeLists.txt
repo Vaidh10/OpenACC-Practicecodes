@@ -1,12 +1,19 @@
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.10)
+project(my_project)
 
-project(practicecodes)
+# Set the source directories for the C and C++ files
+set(C_SOURCE_DIR src/cube-OpenACC)
+#set(CXX_SOURCE_DIR src/cxx)
 
-set(CMAKE_BINARY_DIR ${CMAKE_SOURCE_DIR}/bin)
-set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR})
-set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR})
+# Collect the C and C++ source files
+file(GLOB C_SOURCES "${C_SOURCE_DIR}/cubes_openacc.c")
+#file(GLOB CXX_SOURCES "${CXX_SOURCE_DIR}/*.cpp")
 
+# Set the compiler and flags
+set(CMAKE_C_COMPILER nvc)
+set(CMAKE_C_FLAGS "-acc -ta=tesla")
+#set(CMAKE_CXX_COMPILER nvc)
+#set(CMAKE_CXX_FLAGS "-O2 -Wall")
 
-include_directories("${PROJECT_SOURCE_DIR}/src")
-
-add_executable(practicecodes ${PROJECT_SOURCE_DIR}/cube-OpenACC/cubes_openacc.c)
+# Add the executable target, specifying the C and C++ source files
+add_executable(my_project ${C_SOURCES})
