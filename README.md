@@ -32,6 +32,10 @@ This repository contains a comprehensive list of fully functional code examples 
 4. Compile the code with the appropriate compiler flag for your compiler. For example, with the Nvidia compiler: `nvc -acc -Minfo=accel -ta=tesla -o main main.c`
 5. Run the binary: `./main`
 
+## CMake
+
+Each Practice code is built as follows:
+
 ## Examples
 
 The repository contains a variety of examples, including:
