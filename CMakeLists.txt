@@ -36,6 +36,7 @@ endif()
 
 # specify the source files
 file(GLOB SOURCES "src/*.c")
+message("Sources: ${SOURCES}")
 
 # specify the executable
 # add_executable(openacc_code_examples ${SOURCES})
