@@ -18,7 +18,6 @@ This repository contains a comprehensive list of fully functional code examples 
 ## Requirements
 
 - A compatible compiler with OpenACC support. This includes:
-  - PGI compiler
   - NVIDIA HPC SDK compiler
   - Cray compiler
   - GCC (through the OpenACC plugin)
@@ -30,7 +29,7 @@ This repository contains a comprehensive list of fully functional code examples 
 1. Clone the repository: `git clone https://github.com/Vaidh10/OpenACC-Practicecodes`
 2. Navigate to the code directory: `cd openacc-code-examples`
 3. Each example is in its own subdirectory, navigate to the example you want to run.
-4. Compile the code with the appropriate compiler flag for your compiler. For example, with the PGI compiler: `pgcc -acc -Minfo=accel -ta=tesla:cc35 -o main main.c`
+4. Compile the code with the appropriate compiler flag for your compiler. For example, with the Nvidia compiler: `nvc -acc -Minfo=accel -ta=tesla -o main main.c`
 5. Run the binary: `./main`
 
 ## Examples
