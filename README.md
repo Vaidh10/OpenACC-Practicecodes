@@ -41,9 +41,3 @@ The repository contains a variety of examples, including:
 
 - The OpenACC website (https://www.openacc.org/) provides documentation and tutorials on using the OpenACC programming model.
 - Many of the compilers listed above also provide their own documentation and resources for using OpenACC.
-
-## Note
-
-We are providing sample code for different compilers please check with your compiler documentation for the exact command and flag to use, also before running the binary make sure that your device is compatible with the flag you are using in the command.
-
-Please also be aware that all the examples are provided as is, there might be some modification required depending on the environment or the data that you are using.
