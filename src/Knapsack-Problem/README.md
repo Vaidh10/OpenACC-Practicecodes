@@ -1,5 +1,10 @@
-# Example Knapsack Problem
+# Knapsack Problem with OpenACC
 
-## From original [repo]
+This is a C program that solves the knapsack problem using OpenACC. The knapsack problem is an optimization problem where the goal is to maximize the value of a collection of items with specific weights and values, subject to a constraint on the total weight.
 
-The code uses OpenACC to parallelize the nested loop in the knapsack_solver function, which is where the knapsack problem is solved. The #pragma acc parallel loop directive tells the compiler to parallelize the following loop using the OpenACC standard. The function acc_is_present checks whether the data is present on the device and it prints out "The data is present on the device" if the data is present on the device.the #pragma acc routine directive before the function definition of acc_is_present to provide the compiler with the necessary information to execute the function on an accelerator device
+The code defines two arrays, `weights` and `values`, which contain the weight and value of each item respectively. The `knapsack_solver` function takes in two arguments, `n` and `w`, which represent the number of items and the maximum weight of the knapsack respectively. The function uses a nested loop to fill in the `knapsack` array with the optimal values. The outer loop iterates through the items, and the inner loop iterates through the possible weights. The function then returns the optimal value, which is stored in the last element of the `knapsack` array.
+
+The `main` function calls the `knapsack_solver` function with the number of items and the maximum weight of the knapsack, and then prints the optimal value. The function also uses the OpenACC function `acc_is_present` to check if the data is present on the device.
+
+This code is a simple implementation of the knapsack problem using OpenACC, it uses the parallel loop construct to offload the computation on the device.
+
