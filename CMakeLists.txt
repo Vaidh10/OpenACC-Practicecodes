@@ -1,50 +1,22 @@
-# cmake_minimum_required(VERSION 3.10)
-# project(my_project)
-
-# # Set the source directories for the C and C++ files
-# set(C_SOURCE_DIR src/)
-# set(CXX_SOURCE_DIR src/)
-
-# # Collect the C and C++ source files
-# file(GLOB C_SOURCES "${C_SOURCE_DIR}/*.c")
-# file(GLOB CXX_SOURCES "${CXX_SOURCE_DIR}/*.cpp")
-
-
-# if(CMAKE_C_COMPILER MATCHES "gcc")
-#   set(CMAKE_C_FLAGS "-fopenacc -fopt-info")
-# elseif(CMAKE_C_COMPILER MATCHES "nvc")
-#   set(CMAKE_C_FLAGS "-ta=tesla -Minfo=all")
-# endif()
-
-
-# Add the executable target, specifying the C and C++ source files
-add_executable(my_project ${C_SOURCES} ${CXX_SOURCES})
-
 cmake_minimum_required(VERSION 3.10)
-project(openacc_code_examples)
 
-# set compiler flags based on the compiler
-if(CMAKE_C_COMPILER_ID STREQUAL "PGI")
-    set(CMAKE_C_FLAGS "-acc -Minfo=accel -ta=tesla:cc35")
-elseif(CMAKE_C_COMPILER_ID STREQUAL "Cray")
-    set(CMAKE_C_FLAGS "-h acc")
-elseif(CMAKE_C_COMPILER_ID STREQUAL "NVIDIA")
-    set(CMAKE_C_FLAGS "-Xcompiler -fopenacc")
-elseif(CMAKE_C_COMPILER_ID STREQUAL "GNU")
-    set(CMAKE_C_FLAGS "-fopenacc")
-endif()
+project(OpenACC_Examples)
 
-# specify the source files
-file(GLOB SOURCES "src/*.c")
-message("Sources: ${SOURCES}")
+# Find OpenACC
+find_package(OpenACC REQUIRED)
 
-# specify the executable
-# add_executable(openacc_code_examples ${SOURCES})
+# Add OpenACC flags
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -acc -ta=tesla")
 
-# Here's the general process for building and running the OpenACC code examples using the provided CMake file:
+# Find all example directories
+file(GLOB example_dirs RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} * )
 
-# Create a build directory: mkdir build
-# Navigate to the build directory: cd build
-# Run CMake to generate the build files: cmake ..
-# Build the code: cmake --build .
-# Run the executable: ./openacc_code_examples
+# Loop through each example directory and build the program
+foreach(example_dir ${example_dirs})
+    add_executable(${example_dir} ${example_dir}/${example_dir}.c)
+    add_custom_target(run_${example_dir}
+        COMMAND ${example_dir}
+        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+        DEPENDS ${example_dir}
+        )
+endforeach()
