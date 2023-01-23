@@ -1,0 +1,1 @@
+/opt/nvidia/hpc_sdk/Linux_x86_64/22.9/compilers/bin/nvc CMakeFiles/cube-OpenACC.dir/cube-OpenACC/cubes_openacc.c.o -o cube-OpenACC 

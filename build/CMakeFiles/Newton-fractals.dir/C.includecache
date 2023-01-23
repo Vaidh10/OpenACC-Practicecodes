@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Newton-fractals/newton_fractals_openacc.c
+math.h
+-
+complex.h
+-
+stdio.h
+-
+stdlib.h
+-
+timer.h
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Newton-fractals/timer.h
+openacc.h
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Newton-fractals/openacc.h
+
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Newton-fractals/timer.h
+stdlib.h
+-
+windows.h
+-
+sys/time.h
+-
+

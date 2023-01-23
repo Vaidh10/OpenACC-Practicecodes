@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/global/homes/v/vaidhy/OpenACC-Practicecodes/cube-OpenACC/cubes_openacc.c
+stdio.h
+-
+stdlib.h
+-
+math.h
+-
+time.h
+-
+

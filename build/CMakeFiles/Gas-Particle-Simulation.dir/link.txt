@@ -1,0 +1,1 @@
+/opt/nvidia/hpc_sdk/Linux_x86_64/22.9/compilers/bin/nvc CMakeFiles/Gas-Particle-Simulation.dir/Gas-Particle-Simulation/main.c.o -o Gas-Particle-Simulation 

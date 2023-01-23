@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Jacobi/jacobi.c
+string.h
+-
+stdio.h
+-
+stdlib.h
+-
+omp.h
+-
+laplace2d.h
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Jacobi/laplace2d.h
+
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Jacobi/laplace2d.c
+math.h
+-
+stdlib.h
+-
+
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Jacobi/laplace2d.h
+

@@ -1,0 +1,1 @@
+/opt/nvidia/hpc_sdk/Linux_x86_64/22.9/compilers/bin/nvc CMakeFiles/Newton-fractals.dir/Newton-fractals/newton_fractals_openacc.c.o -o Newton-fractals 

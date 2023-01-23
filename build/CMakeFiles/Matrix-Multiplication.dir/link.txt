@@ -1,0 +1,1 @@
+/opt/nvidia/hpc_sdk/Linux_x86_64/22.9/compilers/bin/nvc CMakeFiles/Matrix-Multiplication.dir/Matrix-Multiplication/matrix_multiplication_openacc.c.o -o Matrix-Multiplication 

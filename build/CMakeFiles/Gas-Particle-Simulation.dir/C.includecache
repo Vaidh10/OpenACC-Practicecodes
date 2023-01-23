@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Gas-Particle-Simulation/main.c
+stdio.h
+-
+openacc.h
+-
+

@@ -1,0 +1,1 @@
+/opt/nvidia/hpc_sdk/Linux_x86_64/22.9/compilers/bin/nvc CMakeFiles/Knapsack-Problem.dir/Knapsack-Problem/knapsack_problem.c.o -o Knapsack-Problem 

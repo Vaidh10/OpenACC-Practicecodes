@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/global/homes/v/vaidhy/OpenACC-Practicecodes/Matrix-Multiplication/matrix_multiplication_openacc.c
+stdio.h
+-
+omp.h
+-
+
