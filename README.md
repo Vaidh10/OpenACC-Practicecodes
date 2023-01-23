@@ -41,10 +41,12 @@ To build the project, you will need to have CMake installed on your system. Here
 2. Run the cmake command to generate the build files, pointing it to the CMakeLists.txt file.
 
 3. Run the make command to build the project.You can then run the example programs by executing the resulting executables.
-    ``` mkdir build && cd build```
-    ```cmake -S . -B build/ -DCMAKE_C_COMPILER=nvc```
-    ```make```
-    ```./<example_program>```
+```
+    $mkdir build && cd build
+    $cmake -S . -B build/ -DCMAKE_C_COMPILER=nvc
+    $make
+    $./<example_program>
+```    
 
 ## Examples
 
