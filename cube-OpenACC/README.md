@@ -64,15 +64,15 @@ This guide will show you how to compile and execute OpenACC code individually fo
 - A computer with a GPU
 - An OpenACC compiler, such as PGI, NVIDIA, or Cray
 
-###### Compiling with PGI
-To compile OpenACC code using the PGI compiler, use the following command:
+###### Compiling with GCC
+To compile OpenACC code using the GCC compiler, use the following command:
 ```bash
-pgcc -acc -Minfo=accel file.c -o execfile
+gcc -fopenacc -fopt-info file.c -o execfile
 ```
 ###### Compiling with NVIDIA
 To compile OpenACC code using the NVIDIA compiler, use the following command:
 ```
-nvcc -arch=sm_35 -acc -Xptxas -dlcm=ca -o execfile file.c
+nvc -acc -M -o execfile file.c
 ```
 ###### Compiling with Cray
 To compile OpenACC code using the Cray compiler, use the following command:
@@ -85,3 +85,31 @@ To execute the compiled code, simply run the executable file:
 ```
 ./execfile
 ```
+
+###### Utilizing Multi-Cores
+To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the NVIDIA HPC SDK compiler. Here's an example command:
+```
+nvc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
+```
+This command enables the use of OpenMP in the code and compiles it for a GPU of compute capability 7.0 or above.
+
+###### Utilizing GPUs
+To utilize GPUs while compiling with OpenACC, you can use the following command:
+```
+nvc -acc -arch=sm_70 -o execfile file.c
+```
+This command compiles the code for a GPU of compute capability 7.0 or above and enables the use of OpenACC directives.
+
+###### Utilizing Multi-Cores and GPUs
+To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
+```
+nvcc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
+```
+This command enables the use of OpenMP and OpenACC directives, and compiles the code for a GPU of compute capability 7.0 or above.
+## Additional Resources
+- [OpenACC website](https://www.openacc.org/)
+- [GCC OpenACC documentation](https://gcc.gnu.org/wiki/OpenACC)
+- [NVIDIA OpenACC documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvc/index.html)
+- [Cray OpenACC documentation](https://docs.cray.com/books/S-2489-51/html-S-2489-51/openacc.html)
+- [Clacc website](https://www.openacc.org/sites/default/files/inline-images/events/F2F20%20presentations/BoF-clacc.pdf)
+- [CUDA website](https://developer.nvidia.com/cuda-zone)
