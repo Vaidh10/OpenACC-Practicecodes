@@ -79,6 +79,7 @@ To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API 
 nvc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
 ```
 This command enables the use of OpenMP in the code and compiles it for a GPU of compute capability 7.0 or above.
+
 To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
 nvc -acc -arch=sm_70 -o execfile file.c
