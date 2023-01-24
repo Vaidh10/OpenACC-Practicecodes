@@ -39,7 +39,7 @@ The repository contains a variety of examples, including:
 
 ## OpenACC Compilation and Execution Guide
 
-This guide will show you how to compile and execute OpenACC code individually for different compilers, without using CMake.
+This section will show you how to compile and execute OpenACC code individually for different compilers, without using CMake.
 
 ###### Prerequisites
 
