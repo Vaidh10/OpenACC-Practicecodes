@@ -59,28 +59,28 @@ much rather do an absolute value rather than a branch.
 
 This guide will show you how to compile and execute OpenACC code individually for different compilers, without using CMake.
 
-## Prerequisites
+###### Prerequisites
 
 - A computer with a GPU
 - An OpenACC compiler, such as PGI, NVIDIA, or Cray
 
-## Compiling with PGI
-
+###### Compiling with PGI
 To compile OpenACC code using the PGI compiler, use the following command:
-
 ```bash
 pgcc -acc -Minfo=accel file.c -o execfile
 ```
-
-## Compiling with NVIDIA
+###### Compiling with NVIDIA
 To compile OpenACC code using the NVIDIA compiler, use the following command:
-```nvcc -arch=sm_35 -acc -Xptxas -dlcm=ca -o execfile file.c```
-
-## Compiling with Cray
+```
+nvcc -arch=sm_35 -acc -Xptxas -dlcm=ca -o execfile file.c
+```
+###### Compiling with Cray
 To compile OpenACC code using the Cray compiler, use the following command:
 
-```cc -h acc -o execfile file.c```
-## Executing the Code
+```
+cc -h acc -o execfile file.c
+```
+###### Executing the Code
 To execute the compiled code, simply run the executable file:
 ```
 ./execfile
