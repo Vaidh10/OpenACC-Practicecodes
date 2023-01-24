@@ -74,6 +74,21 @@ To compile OpenACC code using the NVIDIA compiler, use the following command:
 ```
 nvc -acc -M -o execfile file.c
 ```
+To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the NVIDIA HPC SDK compiler. Here's an example command:
+```
+nvc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
+```
+This command enables the use of OpenMP in the code and compiles it for a GPU of compute capability 7.0 or above.
+To utilize GPUs while compiling with OpenACC, you can use the following command:
+```
+nvc -acc -arch=sm_70 -o execfile file.c
+```
+This command compiles the code for a GPU of compute capability 7.0 or above and enables the use of OpenACC directives.
+To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
+```
+nvcc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
+```
+This command enables the use of OpenMP and OpenACC directives, and compiles the code for a GPU of compute capability 7.0 or above.
 ###### Compiling with Cray
 To compile OpenACC code using the Cray compiler, use the following command:
 
@@ -85,27 +100,6 @@ To execute the compiled code, simply run the executable file:
 ```
 ./execfile
 ```
-
-###### Utilizing Multi-Cores
-To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the NVIDIA HPC SDK compiler. Here's an example command:
-```
-nvc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
-```
-This command enables the use of OpenMP in the code and compiles it for a GPU of compute capability 7.0 or above.
-
-###### Utilizing GPUs
-To utilize GPUs while compiling with OpenACC, you can use the following command:
-```
-nvc -acc -arch=sm_70 -o execfile file.c
-```
-This command compiles the code for a GPU of compute capability 7.0 or above and enables the use of OpenACC directives.
-
-###### Utilizing Multi-Cores and GPUs
-To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
-```
-nvcc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
-```
-This command enables the use of OpenMP and OpenACC directives, and compiles the code for a GPU of compute capability 7.0 or above.
 ## Additional Resources
 - [OpenACC website](https://www.openacc.org/)
 - [GCC OpenACC documentation](https://gcc.gnu.org/wiki/OpenACC)
