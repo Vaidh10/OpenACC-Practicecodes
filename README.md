@@ -57,7 +57,7 @@ gcc -fopenmp -fopenacc -o execfile file.c
 ```
 To utilize GPUs while compiling with OpenACC, you can use the following command, This command enables the use of OpenACC directives and compiles the code for the system's available GPU.
 ```
-gcc -fopenacc -o execfile file.c
+gcc -fopenacc --target=nvptx-none -o execfile file.c
 ```
 To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command, This command enables the use of OpenMP and OpenACC directives, and compiles the code for the system's available GPU.
 ```
@@ -66,34 +66,35 @@ gcc -fopenmp -fopenacc -o execfile file.c
 ###### Compiling with NVIDIA
 To compile OpenACC code using the NVIDIA compiler, use the following command:
 ```
-nvc -acc -M -o execfile file.c
+nvc -acc -o execfile file.c
 ```
-To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the NVIDIA HPC SDK compiler. Here's an example command, This command enables the use of OpenMP in the code and compiles it for a GPU of compute capability 7.0 or above.
+To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the NVIDIA HPC SDK compiler. Here's an example command:
 ```
-nvc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
+nvc -⁠ta=multicore -o execfile file.c
 ```
-To utilize GPUs while compiling with OpenACC, you can use the following command, This command compiles the code for a GPU of compute capability 7.0 or above and enables the use of OpenACC directives.
+To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
-nvc -acc -arch=sm_70 -o execfile file.c
+nvc -⁠ta=tesla -o execfile file.c
 ```
-To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command, This command enables the use of OpenMP and OpenACC directives, and compiles the code for a GPU of compute capability 7.0 or above.
+To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
 ```
-nvc -Xcompiler -fopenmp -acc -arch=sm_70 -o execfile file.c
+nvc -o execfile file.c
 ```
+
 ###### Compiling with Cray
 To compile OpenACC code using the Cray compiler, use the following command:
 ```
 cc -h acc -o execfile file.c
 ```
-To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the Cray compiler. Here's an example command, This command enables the use of OpenMP and compiles the code for the system's available GPU, and enables the use of OpenACC directives.
+To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the Cray compiler. Here's an example command:
 ```
 cc -h omp -h acc=gpu -o execfile file.c
 ```
-To utilize GPUs while compiling with OpenACC, you can use the following command, This command compiles the code for the system's available GPU and enables the use of OpenACC directives.
+To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
 cc -h acc=gpu -o execfile file.c
 ```
-To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command, This command enables the use of OpenMP and compiles the code for the system's available GPU and enables the use of OpenACC directives.
+To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
 ```
 cc -h omp -h acc=gpu -o execfile file.c
 ```
