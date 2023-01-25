@@ -37,7 +37,7 @@ The repository contains a variety of examples, including:
 - Dijkstra-Algorithm
 - And more
 
-## OpenACC Compilation and Execution Guide
+## OpenACC Practicecodes Compilation and Execution Guide
 
 This section will show you how to compile and execute OpenACC code individually for different compilers, without using CMake.
 

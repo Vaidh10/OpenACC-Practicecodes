@@ -1,7 +1,8 @@
 cmake_minimum_required(VERSION 3.0)
 
-# Set the project name
-project(OpenACC_Examples)
+# project name
+project(OpenACC_Practicecodes)
+
 # Add the OpenACC compiler flags for each compiler
 if (CMAKE_C_COMPILER_ID MATCHES "gcc")
     set(OpenACC_FLAGS "-fopenacc -fopt-info")
@@ -25,10 +26,10 @@ elseif (CMAKE_C_COMPILER_ID MATCHES "clang")
 endif()
 
 # Define the list of directories containing the example programs
-set(EXAMPLE_DIRECTORIES Dijkstra-Algorithm Gas-Particle-Simulation Jacobi Knapsack-Problem Matrix-Multiplication Newton-fractals cube-OpenACC)
+set(PRACTICECODE_DIRECTORIES Dijkstra-Algorithm Gas-Particle-Simulation Jacobi Knapsack-Problem Matrix-Multiplication Newton-fractals cube-OpenACC)
 
 # Use a foreach loop to iterate over the directories and build the example programs
-foreach(example_dir ${EXAMPLE_DIRECTORIES})
+foreach(example_dir ${PRACTICECODE_DIRECTORIES})
     file(GLOB example_sources ${example_dir}/*.c)
     add_executable(${example_dir} ${example_sources})
     target_compile_options(${example_dir} PUBLIC ${OpenACC_FLAGS})
