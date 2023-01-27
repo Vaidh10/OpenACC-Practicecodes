@@ -51,17 +51,17 @@ To compile OpenACC code using the GCC compiler, use the following command:
 ```
 gcc -fopenacc -fopt-info file.c -o execfile
 ```
-To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the GCC compiler. Here's an example command, This command enables the use of OpenMP in the code and enables the use of OpenACC directives.
+To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the GCC compiler. Here's an example command:
 ```
 gcc -fopenmp -fopenacc -o execfile file.c
 ```
-To utilize GPUs while compiling with OpenACC, you can use the following command, This command enables the use of OpenACC directives and compiles the code for the system's available GPU.
+To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
 gcc -fopenacc --target=nvptx-none -o execfile file.c
 ```
-To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command, This command enables the use of OpenMP and OpenACC directives, and compiles the code for the system's available GPU.
+To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
 ```
-gcc -fopenmp -fopenacc -o execfile file.c
+gcc -fopenmp -fopenacc -o execfile file.c****
 ```
 ###### Compiling with NVIDIA
 To compile OpenACC code using the NVIDIA compiler, use the following command:
@@ -78,28 +78,28 @@ nvc -⁠ta=tesla -o execfile file.c
 ```
 To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
 ```
-nvc -o execfile file.c
+nvc -o execfile file.c****
 ```
 
 ###### Compiling with Cray
 To compile OpenACC code using the Cray compiler, use the following command:
 ```
-cc -h acc -o execfile file.c
+-o execfile file.c****
 ```
 To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the Cray compiler. Here's an example command:
 ```
-cc -h omp -h acc=gpu -o execfile file.c
+ -o execfile file.c****
 ```
 To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
-cc -h acc=gpu -o execfile file.c
+-o execfile file.c****
 ```
 To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
 ```
-cc -h omp -h acc=gpu -o execfile file.c
+-o execfile file.c****
 ```
 ###### Compiling with Clacc
-To compile OpenACC code using the Cray compiler, use the following command:
+To compile OpenACC code using the Clacc compiler, use the following command:
 ```
 clang -fopenacc -o execfile file.c
 ```
