@@ -22,7 +22,7 @@ To build the project, you will need to have CMake installed on your system. Here
 3. Run the make command to build the project.You can then run the example programs by executing the resulting executables.
 ```
     $ mkdir build && cd build
-    $ cmake -S . -B build/ -DCMAKE_C_COMPILER=nvc
+    $ cmake -S ../ -B . -DCMAKE_C_COMPILER=nvc
     $ make
     $ ./<example_program>
 ```    
@@ -80,7 +80,7 @@ To utilize both multi-cores and GPUs while compiling with OpenACC, you can use t
 ```
 nvc -o execfile file.c****
 ```
-
+<!-- 
 ###### Compiling with Cray
 To compile OpenACC code using the Cray compiler, use the following command:
 ```
@@ -97,7 +97,7 @@ To utilize GPUs while compiling with OpenACC, you can use the following command:
 To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
 ```
 -o execfile file.c****
-```
+``` -->
 ###### Compiling with Clacc
 To compile OpenACC code using the Clacc compiler, use the following command:
 ```
