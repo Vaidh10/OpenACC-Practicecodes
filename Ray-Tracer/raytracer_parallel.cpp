@@ -1,5 +1,7 @@
 #include <fstream>
 #include <cmath>
+#define getClock() ((double)clock()/CLOCKS_PER_SEC)
+double begin,end;
 
 struct Vec3 {
   double x,y,z;
@@ -50,7 +52,7 @@ void clamp255(Vec3& col) {
 }
 
 int main() {
-
+  begin = getClock();
   const int H = 500;
   const int W = 500;
 
@@ -88,4 +90,7 @@ int main() {
         out << (int)pix_col.x << ' '
             << (int)pix_col.y << ' '
             << (int)pix_col.z << '\n';
+    end = getClock();
+    printf("took %f seconds to complete\t",end-begin);
+    return 0;
     }

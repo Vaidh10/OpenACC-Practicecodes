@@ -27,16 +27,6 @@ To build the project, you will need to have CMake installed on your system. Here
     $ ./<example_program>
 ```    
 
-## Examples
-
-The repository contains a variety of examples, including:
-
-- Jacobi
-- Matrix multiplication
-- Mini-Weather
-- Dijkstra-Algorithm
-- And more
-
 ## OpenACC Practicecodes Compilation and Execution Guide
 
 This section will show you how to compile and execute OpenACC code individually for different compilers, without using CMake.
