@@ -30,7 +30,7 @@
 #include <stdlib.h>
 #include <omp.h>
 #include "laplace2d.h"
-
+#include "laplace2d.c"
 #define min(a,b) \
   ({ __typeof__ (a) _a = (a); \
      __typeof__ (b) _b = (b); \
