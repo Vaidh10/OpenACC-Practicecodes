@@ -85,7 +85,7 @@ FILE *myFile;
   begin = getClock();
   quickSort(data, 0, n - 1);
   end = getClock();
-  printf("Sorted array in ascending order: \n");
-  printArray(data, n);
+  //printf("Sorted array in ascending order: \n");
+  //printArray(data, n);
   printf("The quicksort took %f seconds to complete\t",end-begin);
 }

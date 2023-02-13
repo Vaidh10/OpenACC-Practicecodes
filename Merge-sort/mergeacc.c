@@ -176,10 +176,10 @@ FILE *myFile;
         end = getClock();
 
 
-    printf("\nSorted array is \n");
+    //printf("\nSorted array is \n");
 
-    printArray(data, data_size);
-        printf("The mergesort took %f seconds to complete\t",end-begin);
+    //printArray(data, data_size);
+    printf("The mergesort took %f seconds to complete\t",end-begin);
 
     return 0;
 }

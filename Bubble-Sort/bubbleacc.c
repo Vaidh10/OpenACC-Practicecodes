@@ -70,7 +70,7 @@ int main()
 
     printf("Sorted array: \n");
 
-    printArray(data, n);
-        printf("The bubblesort took %f seconds to complete\t",end-begin);
+    //printArray(data, n);
+    //printf("The bubblesort took %f seconds to complete\t",end-begin);
     return 0;
 }
