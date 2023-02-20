@@ -18,7 +18,10 @@ int main()
         }
     }//set matrix
     int u = 0;// start node
+    StartTimer();
     dijkstra(G, n, u);
+    double runtime = GetTimer();
+    printf(" total: %f s\n", runtime / 1000);
     return 0;
 }
 
@@ -30,7 +33,7 @@ void dijkstra(int G[MAX][MAX], int n, int startnode)
     //count gives the number of nodes seen so far
     //create the cost matrix
 
-    StartTimer();
+    
     #pragma acc data copy(G[:n][:n]) create (cost[:n][:n], distance[:n], pred[:n], visited[:n])
     {
         for (i = 0; i < n; i++)
@@ -85,7 +88,6 @@ void dijkstra(int G[MAX][MAX], int n, int startnode)
 //printf("\nDistance of node%d=%d", i, distance[i]);
 //printf("\nPath=%d", i);
 }
-double runtime = GetTimer();
-printf(" total: %f s\n", runtime / 1000);
+
 }
 }

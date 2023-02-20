@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <omp.h>
 #define DIM 3000 
+#include "timer.h"
+
 int main()
 {
-	double begin, end;
-	begin = omp_get_wtime();
+  StartTimer();
   int c, d, k, sum = 0;
   int first[DIM][DIM], second[DIM][DIM], multiply[DIM][DIM];
  
@@ -25,7 +26,8 @@ int main()
         sum = 0;
       }
     }
-    end = omp_get_wtime();
-    printf("TIME PASSED = %.2f seconds\n", end-begin);
+  printf("%d",multiply[0][0]);
+  double runtime = GetTimer();
+  printf(" total: %f s\n", runtime / 1000);
   return 0;
 }
