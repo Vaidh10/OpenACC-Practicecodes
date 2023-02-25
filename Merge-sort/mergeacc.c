@@ -159,15 +159,11 @@ void printArray(int A[], int size)
 
 int main()
 {
-FILE *myFile;
-        myFile = fopen("dataset.txt","r");
-        int data[100000];
-        int i;
-        for (i=0;i<100000;i++){
-
-                fscanf(myFile,"%d",&data[i]);
-        }
-
+int data[100000];
+    int i;
+    for (i = 0; i < 100000; i++) {
+        data[i] = rand() % 100; // replace with your own data input code
+    }
 
 
     int data_size = sizeof(data) / sizeof(data[0]);
