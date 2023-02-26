@@ -6,45 +6,49 @@
 //http://www.micsymposium.org/mics_2005/papers/paper102.pdf
 int knapsack(int W, int wt[], int val[], int n)
 {
-   int A[n+1];
-   int i;
-   long long max = pow(2,n);
-   int best_value = 0;
-
-   for (i = 0; i < max; i++)
-   {
-	int j = n;
-	int temp_weight = 0;
-	int temp_value = 0;
-	while(A[j] !=0 && j>0){
-		A[j]=0;
-		j--;
-	}
-	A[j]=1;
-        #pragma acc parallel loop reduction(max:best_value)
-	for(int k=0; k<n; k++){
-		if(A[k]==1){
-			temp_weight = temp_weight+wt[k];
-			temp_value = temp_value+val[k];
-		}
-	}
-	if((temp_value > best_value) && (temp_weight <= W)){
-		best_value = temp_value;
-	}
-   }
-
-   return best_value;
+    int A[n+1];
+    int i;
+    long long max = pow(2,n);
+    int best_value = 0;
+    #pragma acc data copyin(wt[0:n], val[0:n]) copyout(best_value)
+    {
+        #pragma acc parallel loop private(A)
+        for (i = 0; i < max; i++)
+        {
+            int j = n;
+            int temp_weight = 0;
+            int temp_value = 0;
+            while(A[j] !=0 && j>0){
+                A[j]=0;
+                j--;
+            }
+            A[j]=1;
+            temp_weight = 0;
+            temp_value = 0;
+            #pragma acc loop reduction(+:temp_weight,temp_value)
+            for(int k=0; k<n; k++){
+                if(A[k]==1){
+                    temp_weight += wt[k];
+                    temp_value += val[k];
+                }
+            }
+            if((temp_value > best_value) && (temp_weight <= W)){
+                best_value = temp_value;
+            }
+        }
+    }
+    return best_value;
 }
 
 int main()
 {
-    int val[] = {14,12,7,16,21,3,6,19,4,18}; //Data for 10 items...
-    int wt[] = {3,5,2,6,4,9,10,1,3,8};
-//  int val[] = {14,12,7,16,21,3,6,19,4,18,4,15,14,9,11,12,17,5,19,20}; //Data for 20 items...
-//  int wt[] = {3,5,2,6,4,9,10,1,3,8,5,6,3,8,4,9,5,7,4,2};
+//    int val[] = {14,12,7,16,21,3,6,19,4,18}; //Data for 10 items...
+  //  int wt[] = {3,5,2,6,4,9,10,1,3,8};
+  int val[] = {14,12,7,16,21,3,6,19,4,18,4,15,14,9,11,12,17,5,19,20,12,17,5,19,20,12,17,5,19,20,19}; //Data for 20 items...
+  int wt[] = {3,5,2,6,4,9,10,1,3,8,5,6,3,8,4,9,5,7,4,2,9,5,7,4,2,9,5,7,4,2,4};
     int  W = 25;
     int n = sizeof(val)/sizeof(val[0]); //n can not be greater then 32 or else max will not be able to hold 2^32+
-
+    printf("%d",n);
     //Execution
     double time_start = getClock();
     int output = knapsack(W,wt,val,n);

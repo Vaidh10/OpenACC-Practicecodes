@@ -138,7 +138,7 @@ int main(int argc, char *argv[]) {
     printf("Solving sum of cubes for %d\n", solve);
 
     tic = gettime();
-    StartTimer();
+
     while(!finished && iter < iter_max) {
 
         /* GPU NOTE
@@ -211,17 +211,16 @@ int main(int argc, char *argv[]) {
         toc = gettime();
 
         iter += report_after;
-        // printf(
-        //     // "Report #%d: a=%d, b=%d, c=%d, time=%.4f seconds\n", 
-        //     // report, v, v, v, ((double)(toc - tic)) / 1000.0
-        // );
+        printf(
+            "Report #%d: a=%d, b=%d, c=%d, time=%.4f seconds\n", 
+            report, v, v, v, ((double)(toc - tic)) / 1000.0
+        );
         report += 1;
 
     }
 
-    printsolution(a_sol, b_sol, c_sol);
-    double runtime = GetTimer();
-    printf(" total: %f s\n", runtime / 1000);
+    //printsolution(a_sol, b_sol, c_sol);
+
     return 0;
 
 }
