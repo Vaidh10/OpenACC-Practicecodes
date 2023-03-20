@@ -53,8 +53,8 @@ void clamp255(Vec3& col) {
 
 int main() {
   begin = getClock();
-  const int H = 500;
-  const int W = 500;
+  const int H = 500000;
+  const int W = 500000;
 
   const Vec3 white(255, 255, 255);
   const Vec3 black(0, 0, 0);
@@ -91,6 +91,6 @@ int main() {
             << (int)pix_col.y << ' '
             << (int)pix_col.z << '\n';
     end = getClock();
-    printf("took %f seconds to complete\t",end-begin);
+    printf("took %f seconds to complete\n",end-begin);
     return 0;
     }
