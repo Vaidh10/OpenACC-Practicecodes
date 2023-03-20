@@ -6,5 +6,5 @@ ls,Code,Platform,Device,Host,Multicore #4,Multicore #8,Multicore #16,GPU,Host,GP
 4,Matrix-Multiplication,NVIDIA,A100 ,307.907945 s,77.690979 s,41.994539 s,22.113172 s,7.110401 s,,
 6,Parallelizig Newton-fractals,NVIDIA,A100 ,8.976261 s,2.302669 s,1.372088 s,0.785201 s,0.324660 s,,
 7,Raytracer-Project,NVIDIA,A100 ,1369.146311 s,13193.18624,0.068033s,0.201942s,161.890821 s,,
-8,cube-OpenACC,NVIDIA,A100 ,1112.401s,#pragma acc routine seq - that it should be compiled into GPU code.,,,0.013s,,
+8,cube-OpenACC,NVIDIA,A100 ,1112.401s,,,,0.013s,,
 9,Mini Weather,NVIDIA,A100 ,,1.85372s,1.8789s,1.87307s,,,
