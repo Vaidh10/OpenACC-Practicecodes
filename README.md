@@ -1,19 +1,19 @@
 # OpenACC-Practicecodes
 
-This repository contains a comprehensive list of fully functional code examples for parallel programming on accelerators using OpenACC. The code is intended to help users learn and practice using OpenACC directives to accelerate their own codes and test them on different OpenACC compilers.
+This repository contains functional code examples for parallel programming using OpenACC. The repository is intended to help users learn and practice using OpenACC directives to accelerate their own codes.
 
 ## Requirements
 
-- A compatible compiler with OpenACC support. This includes:
+- A OpenACC Compiler:
   - NVIDIA HPC SDK compiler
   - Cray compiler
   - GCC (through the OpenACC plugin)
-  - Clacc compiler (OpenACC support for clang)
-- An OpenACC-enabled device, such as a GPU
+  - Clacc compiler (OpenACC support for clang/LLVM)
+- A device with a GPU
 
 ## Build Instructions
 
-To build the project, you will need to have CMake installed on your system. Here is an example of how you can use CMake to build the project:
+Here is an example of how you can use CMake to build the project:
 
 1. Create a new directory for the build files and Change directory to the build directory.
 
@@ -31,27 +31,14 @@ To build the project, you will need to have CMake installed on your system. Here
 
 This section will show you how to compile and execute OpenACC code individually for different compilers, without using CMake.
 
-###### Prerequisites
-
-- A computer with a GPU
-- An OpenACC compiler, such as GCC, NVIDIA, Cray, Or Clacc
-
 ###### Compiling with GCC
 To compile OpenACC code using the GCC compiler, use the following command:
 ```
 gcc -fopenacc -fopt-info file.c -o execfile
 ```
-To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the GCC compiler. Here's an example command:
-```
-gcc -fopenmp -fopenacc -o execfile file.c
-```
 To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
-gcc -fopenacc --target=nvptx-none -o execfile file.c
-```
-To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
-```
-gcc -fopenmp -fopenacc -o execfile file.c****
+gcc -fopenacc -o execfile file.c
 ```
 ###### Compiling with NVIDIA
 To compile OpenACC code using the NVIDIA compiler, use the following command:
