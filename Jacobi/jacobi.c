@@ -44,13 +44,13 @@ int main(int argc, char** argv)
     if(argc > 1){
         n = atoi(argv[1]);
     } else {
-        n = 4096;
+        n = 32768;
     }
 
     if(argc > 2){
         m = atoi(argv[2]);
     } else {
-        m = 4096;
+        m = 32768;
     }
 
     if(argc > 3){

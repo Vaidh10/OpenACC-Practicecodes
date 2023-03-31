@@ -32,30 +32,26 @@ Here is an example of how you can use CMake to build the project:
 This section will show you how to compile and execute OpenACC code individually for different compilers, without using CMake.
 
 ###### Compiling with GCC
-To compile OpenACC code using the GCC compiler, use the following command:
+To compile OpenACC code serially using the GCC compiler, use the following command:
 ```
-gcc -fopenacc -fopt-info file.c -o execfile
+gcc -fopenacc -foffload=disable file.c -o execfile
 ```
 To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
 gcc -fopenacc -o execfile file.c
 ```
 ###### Compiling with NVIDIA
-To compile OpenACC code using the NVIDIA compiler, use the following command:
+To compile OpenACC code serially using the NVIDIA compiler, use the following command:
 ```
-nvc -acc -o execfile file.c
+nvc -acc -ta=host -o execfile file.c
 ```
 To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the NVIDIA HPC SDK compiler. Here's an example command:
 ```
-nvc -⁠ta=multicore -o execfile file.c
+nvc -acc -⁠ta=multicore -o execfile file.c
 ```
 To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
-nvc -⁠ta=tesla -o execfile file.c
-```
-To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
-```
-nvc -o execfile file.c****
+nvc --acc ⁠ta=tesla -o execfile file.c
 ```
 <!-- 
 ###### Compiling with Cray

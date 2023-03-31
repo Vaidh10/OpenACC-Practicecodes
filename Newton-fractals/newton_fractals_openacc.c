@@ -13,7 +13,7 @@ int main(void) {
 	int   xMax = 2;
 	int   yMin = -2;
 	int   yMax = 2;
-	int   steps = 5000; //NOTE: Runs steps^2 steps, represents steps done in real and imaginary axes
+	int   steps = 20000; //NOTE: Runs steps^2 steps, represents steps done in real and imaginary axes
 
 	float Tol = .0001;
 	double complex  r1 = 1 + 0*I;
