@@ -34,11 +34,15 @@ This section will show you how to compile and execute OpenACC code individually 
 ###### Compiling with GCC
 To compile OpenACC code serially using the GCC compiler, use the following command:
 ```
-gcc -fopenacc -foffload=disable file.c -o execfile
+export ACC_DEVICE_TYPE=host
+
+gcc -fopenacc -foffload=disable program.c -lm
 ```
 To utilize GPUs while compiling with OpenACC, you can use the following command:
 ```
-gcc -fopenacc -o execfile file.c
+export ACC_DEVICE_TYPE=nvidia|radeon
+
+gcc -fopenacc program.c -lm
 ```
 ###### Compiling with NVIDIA
 To compile OpenACC code serially using the NVIDIA compiler, use the following command:
