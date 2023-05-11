@@ -2,18 +2,14 @@
 
 This repository contains functional code examples for parallel programming using OpenACC. The repository is intended to help users learn and practice using OpenACC directives to accelerate their own codes.
 
-## Requirements
-
-- A OpenACC Compiler:
+- A OpenACC Compiler is required:
   - NVIDIA HPC SDK compiler
   - Cray compiler
-  - GCC (through the OpenACC plugin)
+  - GCC (Configured with OpenACC) 
   - Clacc compiler (OpenACC support for clang/LLVM)
-- A device with a GPU
-
 ## Build Instructions
 
-Here is an example of how you can use CMake to build the project:
+OpenACC Practicecodes can be built using CMake as follows:
 
 1. Create a new directory for the build files and Change directory to the build directory.
 
@@ -29,60 +25,45 @@ Here is an example of how you can use CMake to build the project:
 
 ## OpenACC Practicecodes Compilation and Execution Guide
 
-This section will show you how to compile and execute OpenACC code individually for different compilers, without using CMake.
+Compiling and executing OpenACC code individually for different compilers, without using CMake.
 
 ###### Compiling with GCC
-To compile OpenACC code serially using the GCC compiler, use the following command:
+To compile and run code for host:
 ```
 export ACC_DEVICE_TYPE=host
 
-gcc -fopenacc -foffload=disable program.c -lm
+gcc -fopenacc -foffload=disable program.c -o execfile -lm
 ```
-To utilize GPUs while compiling with OpenACC, you can use the following command:
+To compile and run code for Nvidia and AMD GPU:
 ```
 export ACC_DEVICE_TYPE=nvidia|radeon
 
-gcc -fopenacc program.c -lm
+gcc -fopenacc program.c -o execfile -lm
 ```
 ###### Compiling with NVIDIA
-To compile OpenACC code serially using the NVIDIA compiler, use the following command:
+To compile and run code for host:
 ```
 nvc -acc -ta=host -o execfile file.c
 ```
-To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the NVIDIA HPC SDK compiler. Here's an example command:
+To compile and run code for multicores:
 ```
 nvc -acc -⁠ta=multicore -o execfile file.c
 ```
-To utilize GPUs while compiling with OpenACC, you can use the following command:
+To compile and run code for Nvidia GPU:
 ```
 nvc --acc ⁠ta=tesla -o execfile file.c
 ```
-<!-- 
-###### Compiling with Cray
-To compile OpenACC code using the Cray compiler, use the following command:
-```
--o execfile file.c****
-```
-To utilize multi-cores while compiling with OpenACC, you can use the OpenMP API with the Cray compiler. Here's an example command:
-```
- -o execfile file.c****
-```
-To utilize GPUs while compiling with OpenACC, you can use the following command:
-```
--o execfile file.c****
-```
-To utilize both multi-cores and GPUs while compiling with OpenACC, you can use the following command:
-```
--o execfile file.c****
-``` -->
+
 ###### Compiling with Clacc
-To compile OpenACC code using the Clacc compiler, use the following command:
+To compile and run code for only host:
 ```
 clang -fopenacc -o execfile file.c
 ```
-To utilize GPUs while compiling with OpenACC, you can use the following command:
+To compile and run code for Nvidia and AMD GPU:
 ```
 clang -fopenacc -fopenmp-targets=nvptx64-nvidia-cuda -o execfile file.c
+
+clang -fopenacc -fopenmp-targets=amdgcn-amd-amdhsa -o execfile test.c
 ```
 ###### Executing the Code
 To execute the compiled code, simply run the executable file:
@@ -92,10 +73,9 @@ To execute the compiled code, simply run the executable file:
 
 ## Additional Resources
 
-- The OpenACC website (https://www.openacc.org/) provides documentation and tutorials on using the OpenACC programming model.
-- Many of the compilers listed above also provide their own documentation and resources for using OpenACC.
-- [GCC OpenACC documentation](https://gcc.gnu.org/wiki/OpenACC)
-- [NVIDIA OpenACC documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvc/index.html)
-- [Cray OpenACC documentation](https://docs.cray.com/books/S-2489-51/html-S-2489-51/openacc.html)
-- [Clacc website](https://www.openacc.org/sites/default/files/inline-images/events/F2F20%20presentations/BoF-clacc.pdf)
-- [CUDA website](https://developer.nvidia.com/cuda-zone)
+- The OpenACC website (https://www.openacc.org/) provides documentation on using the OpenACC programming model.
+- GCC documentation[GCC OpenACC documentation](https://gcc.gnu.org/wiki/OpenACC)
+- Nvidia documentation[NVIDIA OpenACC documentation](https://docs.nvidia.com/cuda/cuda-compiler-driver-nvc/index.html)
+- Cray documentation[Cray OpenACC documentation](https://docs.cray.com/books/S-2489-51/html-S-2489-51/openacc.html)
+- Clacc documentation[Clacc website](https://www.openacc.org/sites/default/files/inline-images/events/F2F20%20presentations/BoF-clacc.pdf)
+- Cuda website [CUDA website](https://developer.nvidia.com/cuda-zone)
