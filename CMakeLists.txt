@@ -8,21 +8,13 @@ if (CMAKE_C_COMPILER_ID MATCHES "gcc")
     set(OpenACC_FLAGS "-fopenacc -fopt-info")
 elseif (CMAKE_C_COMPILER_ID MATCHES "nvc")
     set(OpenACC_FLAGS "-Minfo=accel")
-#elseif (CMAKE_C_COMPILER_ID MATCHES "Cray")
-#    set(OpenACC_FLAGS "-acc")
-elseif (CMAKE_C_COMPILER_ID MATCHES "clang")
-    set(OpenACC_FLAGS "-fopenacc")
 endif()
 
 # Add the OpenACC libraries for each compiler
 if (CMAKE_C_COMPILER_ID MATCHES "gcc")
     set(OpenACC_LIBS "-lm")
 elseif (CMAKE_C_COMPILER_ID MATCHES "nvc")
-    set(OpenACC_LIBS "-acc")
-#elseif (CMAKE_C_COMPILER_ID MATCHES "Cray")
-#    set(OpenACC_LIBS "-lm")
-elseif (CMAKE_C_COMPILER_ID MATCHES "clang")
-    set(OpenACC_LIBS "-lm")
+    set(OpenACC_LIBS "-acc -ta=tesla")
 endif()
 
 # Define the list of directories containing the example programs
