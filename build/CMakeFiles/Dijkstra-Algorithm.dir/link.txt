@@ -1,1 +1,0 @@
-/opt/nvidia/hpc_sdk/Linux_x86_64/22.9/compilers/bin/nvc CMakeFiles/Dijkstra-Algorithm.dir/Dijkstra-Algorithm/Dijkstra_openacc.c.o -o Dijkstra-Algorithm 

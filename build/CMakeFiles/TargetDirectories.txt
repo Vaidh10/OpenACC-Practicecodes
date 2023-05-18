@@ -1,9 +1,0 @@
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/rebuild_cache.dir
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/Newton-fractals.dir
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/Matrix-Multiplication.dir
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/edit_cache.dir
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/Knapsack-Problem.dir
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/Jacobi.dir
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/cube-OpenACC.dir
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/Gas-Particle-Simulation.dir
-/global/homes/v/vaidhy/OpenACC-Practicecodes/build/CMakeFiles/Dijkstra-Algorithm.dir
