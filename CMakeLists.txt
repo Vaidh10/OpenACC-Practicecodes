@@ -18,7 +18,7 @@ elseif (CMAKE_C_COMPILER_ID MATCHES "nvc")
 endif()
 
 # Define the list of directories containing the example programs
-set(PRACTICECODE_DIRECTORIES Dijkstra-Algorithm Gas-Particle-Simulation Jacobi Knapsack-Problem Matrix-Multiplication Newton-fractals cube-OpenACC)
+set(PRACTICECODE_DIRECTORIES Cube-OpenACC Jacobi Knapsack-Problem Matrix-Multiplication Newton-fractals Ray-Tracer)
 
 # Use a foreach loop to iterate over the directories and build the example programs
 foreach(example_dir ${PRACTICECODE_DIRECTORIES})

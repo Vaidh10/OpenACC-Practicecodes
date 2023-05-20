@@ -51,7 +51,7 @@ nvc -acc -⁠ta=multicore -o execfile file.c
 ```
 To compile and run code for Nvidia GPU:
 ```
-nvc --acc ⁠ta=tesla -o execfile file.c
+nvc -acc -gpu=[options] -o execfile file.c
 ```
 
 ###### Compiling with Clacc
