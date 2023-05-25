@@ -22,7 +22,9 @@ set(PRACTICECODE_DIRECTORIES Cubes-OpenACC Jacobi Knapsack-Problem Matrix-Multip
 
 # Use a foreach loop to iterate over the directories and build the example programs
 foreach(example_dir ${PRACTICECODE_DIRECTORIES})
-    file(GLOB example_sources ${example_dir}/*.c)
+    file(GLOB example_sources_c ${example_dir}/*.c)
+    file(GLOB example_sources_cpp ${example_dir}/*.cpp)
+    set(example_sources ${example_sources_c} ${example_sources_cpp})
     add_executable(${example_dir} ${example_sources})
     target_compile_options(${example_dir} PUBLIC ${OpenACC_FLAGS})
     target_link_libraries(${example_dir} PUBLIC ${OpenACC_LIBS})
