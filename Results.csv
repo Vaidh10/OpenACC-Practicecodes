@@ -1,5 +1,8 @@
+Compiler Version, CPU Model
+GCC 9.2.1, Intel Xeon E5-2690 v3
+
 ,,NVC,,,,,GCC,
-Codes,Device,Host (Serial) ,Multicore #4 cores,Multicore #8 cores,Multicore #16 cores,GPU,Host (Serial),GPU
+Codes,Device,Host (Serial),Multicore #4 cores,Multicore #8 cores,Multicore #16 cores,GPU,Host (Serial),GPU
 Jacobi,NVIDIA A100,52.240343,34.108542,27.329892,13.504239,1.244327,12.236104,2.382199
 Knapsack-Problem,NVIDIA A100,78.435666,TBD,TBD,TBD,5.35254,0.0873,TBD
 Matrix-Multiplication,NVIDIA A100,307.907945,77.690979,41.994539,22.113172,7.110401,77.644999,0.983431
