@@ -6,4 +6,5 @@ Matrix-Multiplication,NVIDIA A100,307.907945,77.690979,41.994539,22.113172,7.110
 Parallelizig Newton-fractals,NVIDIA A100,8.976261,2.302669,1.372088,0.785201,0.32466,191.646481,13.050479
 Raytracer-Project,NVIDIA A100,1369.146311,12630.15835,6244.371505,572.811477,161.890821,TBD,TBD
 cube-OpenACC,NVIDIA A100,1112.401,Not compatible,Not compatible,Not compatible,0.013,1222.476,16.556
-,,,,,,,,Execution time in seconds
+
+Execution time in seconds
