@@ -1,9 +1,11 @@
-,,NVC,,,,,GCC,
-Codes,Device,Host (Serial) ,Multicore #4 cores,Multicore #8 cores,Multicore #16 cores,GPU,Host (Serial),GPU
-Jacobi,NVIDIA A100,52.240343,34.108542,27.329892,13.504239,1.244327,12.236104,2.382199
-Knapsack-Problem,NVIDIA A100,78.435666,TBD,TBD,TBD,5.35254,0.0873,TBD
-Matrix-Multiplication,NVIDIA A100,307.907945,77.690979,41.994539,22.113172,7.110401,77.644999,0.983431
-Parallelizig Newton-fractals,NVIDIA A100,8.976261,2.302669,1.372088,0.785201,0.32466,191.646481,13.050479
-Raytracer-Project,NVIDIA A100,1369.146311,12630.15835,6244.371505,572.811477,161.890821,TBD,TBD
-cube-OpenACC,NVIDIA A100,1112.401,Not compatible,Not compatible,Not compatible,0.013,1222.476,16.556
-,,,,,,,,Execution time in seconds
+Device:,NVIDIA A100,,,,,,
+CPU Model:,AMD EPYC 7763,,,,,,
+Execution time:,seconds,,,,,,
+,NVC 23.1,,,,,GCC 12.2.1,
+Codes,Host (Serial) ,Multicore #4 cores,Multicore #8 cores,Multicore #16 cores,GPU,Host (Serial),GPU
+Jacobi,52.240343,34.108542,27.329892,13.504239,1.244327,12.236104,2.382199
+Knapsack-Problem,78.435666,TBD,TBD,TBD,5.35254,0.0873,TBD
+Matrix-Multiplication,307.907945,77.690979,41.994539,22.113172,7.110401,77.644999,0.983431
+Parallelizig Newton-fractals,8.976261,2.302669,1.372088,0.785201,0.32466,191.646481,13.050479
+Raytracer-Project,1369.146311,12630.15835,6244.371505,572.811477,161.890821,TBD,TBD
+cube-OpenACC,1112.401,Not compatible,Not compatible,Not compatible,0.013,1222.476,16.556
