@@ -77,7 +77,7 @@ If you have any questions, issues, or suggestions related to this code, please f
 
 - Vaidhyanathan Ravichnadran - [vaidhy@udel.edu](mailto:vaidhy@udel.edu)
 - Sunita Chandrasekaran - [schandra@udel.edu](mailto:schandra@udel.edu)
-- CRPL - [https://crpl.cis.udel.edu/](https://crpl.cis.udel.edu/)
+- CRPL OpenACC Verification and Validation Testsuite - [https://crpl.cis.udel.edu/oaccvv/](https://crpl.cis.udel.edu/oaccvv/)
 
 
 ## Additional Resources
