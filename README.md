@@ -75,10 +75,9 @@ To execute the compiled code, simply run the executable file:
 
 If you have any questions, issues, or suggestions related to this code, please feel free to contact the maintainers:
 
-- [Vaidhyanathan Ravichandran](mailto:vaidhy@udel.edu)
-- [Sunita Chandrasekaran](mailto:schandra@udel.edu)
-- [CRPL -](https://crpl.cis.udel.edu/)
-- [Website Link: ](https://crpl.cis.udel.edu/oaccvv/results/)
+- Vaidhyanathan Ravichnadran - [vaidhy@udel.edu](mailto:vaidhy@udel.edu)
+- Sunita Chandrasekaran - [schandra@udel.edu](mailto:schandra@udel.edu)
+- CRPL - [https://crpl.cis.udel.edu/](https://crpl.cis.udel.edu/)
 
 
 ## Additional Resources
