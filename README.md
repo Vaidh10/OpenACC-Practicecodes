@@ -71,6 +71,16 @@ To execute the compiled code, simply run the executable file:
 ./execfile
 ```
 
+## Contact
+
+If you have any questions, issues, or suggestions related to this code, please feel free to contact the maintainers:
+
+- [Vaidhyanathan Ravichandran](mailto:vaidhy@udel.edu)
+- [Sunita Chandrasekaran](mailto:schandra@udel.edu)
+- [CRPL -](https://crpl.cis.udel.edu/)
+- [Website Link: ](https://crpl.cis.udel.edu/oaccvv/results/)
+
+
 ## Additional Resources
 
 - The OpenACC website (https://www.openacc.org/) provides documentation on using the OpenACC programming model.
@@ -79,3 +89,4 @@ To execute the compiled code, simply run the executable file:
 - Cray documentation[Cray OpenACC documentation](https://docs.cray.com/books/S-2489-51/html-S-2489-51/openacc.html)
 - Clacc documentation[Clacc website](https://www.openacc.org/sites/default/files/inline-images/events/F2F20%20presentations/BoF-clacc.pdf)
 - Cuda website [CUDA website](https://developer.nvidia.com/cuda-zone)
+
