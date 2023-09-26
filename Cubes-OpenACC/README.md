@@ -55,3 +55,44 @@ I am only checking half of the possible combinations and
 taking the absolute value of everything. A GPU would
 much rather do an absolute value rather than a branch.
 
+## Build Instructions
+
+To compile the code with a specific target, use one of the following commands:
+
+    - For GCC with GPU target (OpenACC):
+        ```bash
+        export ACC_DEVICE_TYPE=nvidia|radeon
+        make gcc_gpu
+        ```
+
+    - For GCC without GPU offloading:
+        ```bash
+        export ACC_DEVICE_TYPE=host
+        make gcc_serial
+        ```
+
+    - For NVC with NVIDIA Tesla GPU target:
+        ```bash
+        make nvc_gpu
+        ```
+
+    - For NVC with multicore CPU target:
+        ```bash
+        export ACC_NUM_THREADS=4|8|16
+        make nvc_multicore
+        ```
+
+    - For NVC targeting the host CPU:
+        ```bash
+        make nvc_serial
+        ```
+
+After running one of the above commands, the executable file (e.g., `gcc_gpu`) will be generated in the same directory.
+
+## Cleaning Up
+
+To clean up and remove the compiled executable, use the following command:
+
+```bash
+make clean
+```
