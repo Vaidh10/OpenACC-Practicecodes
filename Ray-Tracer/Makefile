@@ -1,4 +1,4 @@
-SOURCES = Knapsack_dynamic_parallel.c
+SOURCES = raytracer_parallel.cpp
 CFLAGS = -fopenacc -lm
 NVCFLAGS = -acc
 

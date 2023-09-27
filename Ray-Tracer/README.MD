@@ -7,31 +7,31 @@ This is our parallel programming project in which we have to use real world seri
 
 To compile the code with a specific target, use one of the following commands:
 
-    - For GCC with GPU target (OpenACC):
-        ```bash
+- For GCC with GPU target (OpenACC):
+        ```  
         export ACC_DEVICE_TYPE=nvidia|radeon
         make gcc_gpu
         ```
 
-    - For GCC without GPU offloading:
-        ```bash
+- For GCC without GPU offloading:
+        ```
         export ACC_DEVICE_TYPE=host
         make gcc_serial
         ```
 
-    - For NVC with NVIDIA Tesla GPU target:
+- For NVC with NVIDIA Tesla GPU target:
         ```bash
         make nvc_gpu
         ```
 
-    - For NVC with multicore CPU target:
-        ```bash
+- For NVC with multicore CPU target:
+        ```
         export ACC_NUM_THREADS=4|8|16
         make nvc_multicore
         ```
 
-    - For NVC targeting the host CPU:
-        ```bash
+- For NVC targeting the host CPU:
+        ```
         make nvc_serial
         ```
 

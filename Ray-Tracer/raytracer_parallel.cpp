@@ -1,7 +1,19 @@
+/**
+ * @file raytracer_refactored.cpp
+ * @author Adam Kenney, Jaden Stith
+ * @brief Parallel using openmp.
+ * @version 0.1
+ * @date 2021-12-01
+ *
+ *
+ *
+ */
+
 #include <fstream>
 #include <cmath>
-#define getClock() ((double)clock()/CLOCKS_PER_SEC)
-double begin,end;
+#include <iostream>
+#include <omp.h>
+#include "timer.h"
 
 struct Vec3 {
   double x,y,z;
@@ -52,7 +64,7 @@ void clamp255(Vec3& col) {
 }
 
 int main() {
-  begin = getClock();
+  StartTimer();
   const int H = 500000;
   const int W = 500000;
 
@@ -90,7 +102,7 @@ int main() {
         out << (int)pix_col.x << ' '
             << (int)pix_col.y << ' '
             << (int)pix_col.z << '\n';
-    end = getClock();
-    printf("took %f seconds to complete\n",end-begin);
+    double runtime = GetTimer();
+    printf(" total: %f s\n", runtime / 1000);
     return 0;
     }
