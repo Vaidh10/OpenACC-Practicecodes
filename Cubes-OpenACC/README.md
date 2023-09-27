@@ -91,14 +91,16 @@ After running one of the above commands, the executable file (e.g., `gcc_gpu`) w
 
 
 To run the executable with a specified command (e.g., `./exec 100000000`), use the following command:
-    ```bash
-    ./exec 100000000
-    ```
+
+```bash
+./exec 100000000
+```
 
 To clean up and remove the compiled executable, use the following command:
-    ```bash
-    make clean
-    ```
+
+```bash
+make clean
+```
 
 ## Cleaning Up
 
