@@ -31,16 +31,16 @@ To compile the code with a specific target, use one of the following commands:
         ```
 
 - For NVC targeting the host CPU:
-        ```
-        make nvc_serial
-        ```
+```
+make nvc_serial
+```
 
 After running one of the above commands, the executable file (e.g., `gcc_gpu`) will be generated in the same directory.
 
 
 To run the executable with a specified command (e.g., `./nvc_gpu`), use the following command:
 
-```bash
+```
 ./nvc_gpu
 ```
 
