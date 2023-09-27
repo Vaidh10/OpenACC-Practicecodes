@@ -1,0 +1,3 @@
+[submodule "miniWeather"]
+	path = miniWeather
+	url = https://github.com/mrnorman/miniWeather
