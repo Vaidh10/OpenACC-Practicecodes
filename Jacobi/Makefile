@@ -1,4 +1,4 @@
-SOURCES = cubes_openacc.c
+SOURCES = jacobi.c
 CFLAGS = -fopenacc -lm
 NVCFLAGS = -acc
 CC = gcc
@@ -19,5 +19,5 @@ nvc_serial:
     nvc $(SOURCES) $(NVCFLAGS) -ta=host -o nvc_gpu
 
 clean:
-    rm -f gcc*
-	rm -f nvc*
+        rm -f gcc*
+		rm -f nvc*

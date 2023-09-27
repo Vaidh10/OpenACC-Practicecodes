@@ -1,7 +1,6 @@
-SOURCES = cubes_openacc.c
+SOURCES = Knapsack_dynamic_parallel.c
 CFLAGS = -fopenacc -lm
 NVCFLAGS = -acc
-CC = gcc
 
 gcc_gpu:
     gcc $(SOURCES) $(CFLAGS) -o gcc_gpu
@@ -19,5 +18,5 @@ nvc_serial:
     nvc $(SOURCES) $(NVCFLAGS) -ta=host -o nvc_gpu
 
 clean:
-    rm -f gcc*
-	rm -f nvc*
+        rm -f gcc*
+		rm -f nvc*

@@ -90,19 +90,11 @@ To compile the code with a specific target, use one of the following commands:
 After running one of the above commands, the executable file (e.g., `gcc_gpu`) will be generated in the same directory.
 
 
-To run the executable with a specified command (e.g., `./exec 100000000`), use the following command:
+To run the executable with a specified command (e.g., `./nvc_gpu 100000000`), use the following command:
 
 ```bash
-./exec 100000000
+./nvc_gpu 100000000
 ```
-
-To clean up and remove the compiled executable, use the following command:
-
-```bash
-make clean
-```
-
-## Cleaning Up
 
 To clean up and remove the compiled executable, use the following command:
 
