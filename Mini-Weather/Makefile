@@ -1,22 +1,18 @@
-SOURCES = Knapsack_dynamic_parallel.c
-CFLAGS = -fopenacc -lm
-NVCFLAGS = -acc
+#!/bin/bash
 
-gcc_gpu:
-    gcc $(SOURCES) $(CFLAGS) -o gcc_gpu
+source ${MODULESHOME}/init/bash
+module load PrgEnv-gnu cray-mpich cray-parallel-netcdf cmake
 
-gcc_serial:
-    gcc $(SOURCES) $(CFLAGS) -foffload=disable -o gcc_host
-	
-nvc_gpu:
-    nvc $(SOURCES) $(NVCFLAGS) -ta=tesla -o nvc_gpu
+export TEST_MPI_COMMAND="srun -n 1"
 
-nvc_multicore:
-    nvc $(SOURCES) $(NVCFLAGS) -ta=multicore -o nvc_gpu
+./cmake_clean.sh
 
-nvc_serial:
-    nvc $(SOURCES) $(NVCFLAGS) -ta=host -o nvc_gpu
-
-clean:
-        rm -f gcc*
-		rm -f nvc*
+cmake -DCMAKE_Fortran_COMPILER=mpif90                                                 \
+      -DFFLAGS="-Ofast -march=native -ffree-line-length-none -DNO_INFORM -I${PNETCDF_DIR}/include"   \
+      -DLDFLAGS="-L${PNETCDF_DIR}/lib -lpnetcdf"                        \
+      -DOPENMP_FLAGS="-fopenmp"                                                       \
+      -DNX=200                                      \
+      -DNZ=100                                      \
+      -DSIM_TIME=1000                               \
+      -DOUT_FREQ=2000                     \
+      ..
